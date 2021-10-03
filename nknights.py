@@ -15,14 +15,14 @@ def max_knights(rows, cols):
 
         #IF YES THEN LOOK FOR CONSECUTIVE ROWS OR COLS
 
-        n_sol = (max(cols, rows) // 4) * 4;
+        n_sol = (max(cols, rows) // 4) * 4
 
         if (max(cols, rows) % 4 == 1):
 
-            n_sol += 2;
+            n_sol += 2
 
         elif (max(cols, rows) % 4 > 1):
-            n_sol += 4;
+            n_sol += 4
 
         if cols > rows:
             for col in range(0, cols):
@@ -32,7 +32,7 @@ def max_knights(rows, cols):
             for row in range(0, rows):
                 for col in range(0, cols, 2):
                     chess[row][col + 1] = 1
-        return n_sol;
+        return n_sol
 
    #GENERAL CASE
     else:
@@ -41,7 +41,7 @@ def max_knights(rows, cols):
             for row in range(j, rows, 2):
                 chess[row][col] = 1
 
-        return (((cols * rows) + 1) // 2);
+        return (((cols * rows) + 1) // 2)
 
 rows = int(input('Enter the number of rows: '))
 cols = int(input('Enter the number of columns: '))
